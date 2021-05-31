@@ -1,0 +1,102 @@
+h3,
+p{
+    color: white;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+a{
+    text-decoration: none;
+}
+.changeCourseFon{
+    /* background: #f8f8f8; */
+    padding: 15px;
+}
+.changeCourseBox{
+    /* margin-top: -20px; */
+    /* width: 100%; */
+    background: #005B0F;
+    border-radius: 6px;
+    box-shadow: 0 0 1px rgb(0 0 0 / 20%), 0 2px 10px rgb(0 0 0 / 8%), 0 1px 1px rgb(0 0 0 / 16%);
+    padding: 20px;
+    
+}
+.nameCourse{
+    text-align: center;
+    color: white;
+}
+.sliderBox{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 70px;
+}
+.recordingCourseButton{
+    background: #ffa500;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.recordingCourseFon{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.32);
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+.recordingCourse{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding:10px;
+    width: 392px;
+    height: max-content;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 1px rgb(0 0 0 / 20%), 0 2px 10px rgb(0 0 0 / 8%), 0 1px 1px rgb(0 0 0 / 16%);
+}
+.recordingCourseText{
+    color: black;
+    font-size: 18px;
+}
+.recordingCourseInput{
+    border: 1px solid rgba(0,0,0,.32);
+    border-radius: 4px;
+    padding: 10px;
+    max-width: 160px;
+    text-decoration: none;
+}
+.writeButton{
+padding: 10px;
+background: #0a0;
+border-radius: 8px;
+border: none;
+color: #fff;
+font-weight: 500;
+font-size: 18px;
+line-height: 24px;
+cursor: pointer;
+}
+.closeImgBox{
+    width: max-content;
+    margin-left: auto;
+    cursor: pointer;
+}
+@media (max-width: 700px) {
+    .changeCourseFon{
+        padding: 10px;
+    }
+    .sliderBox{
+        width: 100%;
+    }
+}
+@media (max-width: 700px) {
+    .recordingCourse{
+        width: 300px;
+    }
+}
