@@ -32,7 +32,7 @@ const Login = (props) => {
             })
     }
     const auth = () => {
-        
+        users &&
         users.map(e => {
             if (e.login == login && e.password == password) {
                 console.log("ВЫ успешно вошли в систему");
@@ -83,12 +83,6 @@ const Login = (props) => {
                 <div className={styles.comeInBox}>
                     <button className={styles.comeIn} onClick={(e) => { auth() }}>Войти</button>
                 </div>
-                {/* <NavLink
-                    className={styles.registrationLink}
-                    activeClassName={styles.registrationLinkActive}
-                    to='/registration'>
-                    Нет аккаунта? Зарегистрируйтесь
-                    </NavLink> */}
             </div>
         </div>
     )

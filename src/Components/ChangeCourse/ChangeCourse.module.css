@@ -67,8 +67,8 @@ a{
 .recordingCourseInput{
     border: 1px solid rgba(0,0,0,.32);
     border-radius: 4px;
-    padding: 10px;
-    max-width: 160px;
+    padding: 9px;
+    width: 280px;
     text-decoration: none;
 }
 .writeButton{

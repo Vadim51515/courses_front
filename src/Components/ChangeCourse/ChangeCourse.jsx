@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import Axios from 'axios';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 import {
     BrowserRouter as Router,
     Link,
@@ -36,11 +38,11 @@ const ChangeCourse = (props) => {
             else {
                 setError(false)
                 Axios.post("http://localhost:3001/post/application",
-                {
-                    name: name,
-                    number: number,
-                    course:props.course[0].heading,
-                })
+                    {
+                        name: name,
+                        number: number,
+                        course: props.course[0].heading,
+                    })
                 alert('Вы успешно записались на курс')
                 setRecordingCourseBoll(false)
             }
@@ -49,12 +51,10 @@ const ChangeCourse = (props) => {
     return (
         props.course ?
             <div className={styles.changeCourseFon}>
-                
-
                 <div className={styles.changeCourseBox}>
                     <button className={styles.recordingCourseButton} onClick={() => {
-                                         handleOnClick()
-                                    }}> <h3>Вернуться к просмотру всех курсов</h3></button>
+                        handleOnClick()
+                    }}> <h3>Вернуться к просмотру всех курсов</h3></button>
                     <h1 className={styles.nameCourse} >{props.course[0].heading}</h1>
                     <div className={styles.sliderBox}>
                         <AwesomeSlider >
@@ -103,18 +103,34 @@ const ChangeCourse = (props) => {
                         <div className={styles.recordingCourseFon}>
                             <div className={styles.recordingCourse}>
                                 <div className={styles.closeImgBox}>
-                
-                                    <img className={styles.closeImg} onClick={(e)=>{setRecordingCourseBoll(false)}} src='../img/Close.svg' />
+
+                                    <img className={styles.closeImg} onClick={(e) => { setRecordingCourseBoll(false) }} src='../img/Close.svg' />
                                 </div>
                                 <p className={styles.recordingCourseText}>Введите ваше ФИО</p>
                                 <input className={styles.recordingCourseInput} onChange={(e) => { setName(e.target.value) }} />
                                 <p className={styles.recordingCourseText}>Введите ваш номер телефона</p>
-                                <input type='number'  onKeyUp={(e)=>{console.log(typeof Number(e.target.value) === 'number' && e.target.value === NaN)}} className={styles.recordingCourseInput} onChange={(e) => { 
-                                    setNumber(e.target.value) 
-                                    }} />
+                                {/* <input type='number'
+                                    className={styles.recordingCourseInput}
+                                    onChange={(e) => {
+                                        setNumber(e.target.value)
+                                    }} /> */}
+                                <PhoneInput
+                                    inputStyle={{
+                                        border: '1px solid rgba(0, 0, 0, 0.32)',
+                                        width: '100% !important',
+                                    }}
+                                    containerStyle={{ width: '100% !important' }}
+                                    country={'ru'}
+                                    placeholder={'+7 (000) 000-00-00'}
+                                    value={number}
+                                    inputClass={'userInput'}
+                                    containerClass={'containerUser'}
+                                    className={styles.fieldValue}
+                                    onChange={e => setNumber(e)}
+                                />
                                 <div style={{ marginTop: 20 }}>
-                                    {error && 
-                                    <p style={{color:'red'}}>Вы ввели не все данные</p>
+                                    {error &&
+                                        <p style={{ color: 'red' }}>Вы ввели не все данные</p>
                                     }
                                     <button className={styles.writeButton} onClick={() => {
                                         writeCourse()

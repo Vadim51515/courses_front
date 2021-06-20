@@ -25,3 +25,11 @@
     max-width: 24px;
     margin-left: auto;
 }
+.recordingCourseButton{
+    background: #ffa500;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
