@@ -38,6 +38,10 @@ const Application = (props) => {
                                 <button className={styles.recordingCourseButton} onClick={() => {
                         handleOnClick()
                     }}> <h3>Вернуться к просмотру всех курсов</h3></button>
+                    <button className={styles.red} onClick={() => {
+                        handleOnClick()
+                      localStorage.setItem('isAdmin',"777");
+                    }}> <h3>Выйти из режима администратора</h3></button>
             {applications &&
                 applications.map(e=>(
                 <div className={styles.applicationBox}>

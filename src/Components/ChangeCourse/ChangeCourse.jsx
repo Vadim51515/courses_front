@@ -55,6 +55,7 @@ const ChangeCourse = (props) => {
                     <button className={styles.recordingCourseButton} onClick={() => {
                         handleOnClick()
                     }}> <h3>Вернуться к просмотру всех курсов</h3></button>
+                    
                     <h1 className={styles.nameCourse} >{props.course[0].heading}</h1>
                     <div className={styles.sliderBox}>
                         <AwesomeSlider >
